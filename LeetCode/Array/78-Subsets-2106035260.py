@@ -1,0 +1,12 @@
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        n=len(nums)
+        ans=[]
+        count=(1<<n)
+        for val in range  (count):
+            subset=[]
+            for i in range(n):
+                if val&(1<<i):
+                    subset.append(nums[i])
+            ans.append(subset)
+        return ans
